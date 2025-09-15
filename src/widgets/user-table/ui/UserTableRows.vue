@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { User, UserTableColumn } from "../../../entities/user/model/types";
+import type { User, UserTableColumn } from "src/entities/user/model/types";
 
 interface Props {
   columns: UserTableColumn[];

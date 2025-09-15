@@ -1,6 +1,7 @@
 <script setup>
-import UserTable from "../../../widgets/user-table/ui/UserTable.vue";
+import { UserTable } from "src/widgets/user-table";
 </script>
+
 <template>
   <div>
     <user-table />

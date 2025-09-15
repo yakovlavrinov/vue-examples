@@ -1,11 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainPage from "../../../pages/MainPage/ui/MainPage.vue";
+import { MainPage } from "src/pages/MainPage";
 
-
-const routes = [
-  { path: "/", component: MainPage },
-//   { path: "/user/:id", component: () => import("@/pages/user") }
-];
+const routes = [{ path: "/", component: MainPage }];
 
 export const router = createRouter({
   history: createWebHistory(),
