@@ -1,11 +1,10 @@
+<script setup>
+import UserTable from "../../../widgets/user-table/ui/UserTable.vue";
+</script>
 <template>
   <div>
-    <my-table />
+    <user-table />
   </div>
 </template>
-
-<script setup>
-import MyTable from "../../../components/MyTable.vue";
-</script>
 
 <style lang="scss" scoped></style>
