@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { useUserStore } from "src/entities/user/model/store";
 import UserTableColumns from "./UserTableColumns.vue";
 import UserTableRows from "./UserTableRows.vue";
 
+const userStore = useUserStore();
 const columns = [
   { type: "id", name: "id" },
   { type: "fullname", name: "ФИО" },
@@ -11,42 +13,12 @@ const columns = [
   { type: "position", name: "Должность" },
   { type: "salary", name: "ЗП" },
 ];
-
-const users = [
-  {
-    id: 1,
-    fullname: "Иванов Иван Иванович",
-    tel: "88005553535",
-    email: "aaaa@mail.ru",
-    address: "г Москва ул Московская",
-    position: "Frontend-разработчик",
-    salary: 200000,
-  },
-  {
-    id: 2,
-    fullname: "Иванов Иван Иванович",
-    tel: "88005553535",
-    email: "aaaa@mail.ru",
-    address: "г Москва ул Московская",
-    position: "Frontend-разработчик",
-    salary: 200000,
-  },
-  {
-    id: 3,
-    fullname: "Иванов Иван Иванович",
-    tel: "88005553535",
-    email: "aaaa@mail.ru",
-    address: "г Москва ул Московская",
-    position: "Frontend-разработчик",
-    salary: 200000,
-  },
-];
 </script>
 
 <template>
   <n-table :bordered="false" :single-line="false">
     <user-table-columns :columns />
-    <user-table-rows :columns :users />
+    <user-table-rows :columns :users="userStore.users" />
   </n-table>
 </template>
 

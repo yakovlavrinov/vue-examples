@@ -1,8 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useUserStore } from 'src/entities/user/model/store';
+const userStore = useUserStore()
+
+</script>
 
 <template>
   <n-input-group>
-    <n-input placeholder="Поиск по имени" />
+    <n-input v-model:value="userStore.searchQuery" placeholder="Поиск по имени" />
     <n-button type="primary" ghost> Поиск </n-button>
   </n-input-group>
 </template>

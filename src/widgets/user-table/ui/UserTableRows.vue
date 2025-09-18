@@ -7,13 +7,13 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const { columns, users } = props;
+
 </script>
 
 <template>
   <tbody>
-    <tr v-for="user in users" :key="user.id">
-      <td v-for="column in columns" :key="column.type">
+    <tr v-for="user in props.users" :key="user.id">
+      <td v-for="column in props.columns" :key="column.type">
         {{ user[column.type as keyof User] }}
       </td>
     </tr>
