@@ -13,7 +13,11 @@ export const useUserStore = defineStore("user", () => {
     try {
       isLoading.value = true;
       const res = (await fetchUsers()) as User[];
-      users.value = res;
+      if (searchQuery.value) {
+        users.value = searchUsers(res);
+      } else {
+        users.value = res;
+      }
     } catch (err) {
       error.value = err instanceof Error ? err.message : "Failed to load users";
     } finally {
@@ -21,20 +25,15 @@ export const useUserStore = defineStore("user", () => {
     }
   };
 
-  const searchUsers = () => {
-    if (searchQuery.value) {
-      users.value = users.value.filter((user) =>
-        user.fullname.toLowerCase().includes(searchQuery.value.toLowerCase())
-      );
-    } else {
-      loadUsers();
-    }
+  const searchUsers = (users: User[]) => {
+    return users.filter((user) =>
+      user.fullname.toLowerCase().includes(searchQuery.value.toLowerCase())
+    );
   };
 
   return {
     users,
     searchQuery,
     loadUsers,
-    searchUsers,
   };
 });

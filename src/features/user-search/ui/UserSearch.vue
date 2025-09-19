@@ -7,7 +7,7 @@ const userStore = useUserStore()
 <template>
   <n-input-group>
     <n-input v-model:value="userStore.searchQuery" placeholder="Поиск по имени" />
-    <n-button @click="userStore.searchUsers" type="primary" ghost> Поиск </n-button>
+    <n-button @click="userStore.loadUsers" type="primary" ghost> Поиск </n-button>
   </n-input-group>
 </template>
 
