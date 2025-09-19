@@ -4,6 +4,8 @@ import { UserSearch } from "src/features/user-search";
 import { onMounted } from "vue";
 import { useUserStore } from "src/entities/user/model/store";
 
+
+
 const userStore = useUserStore();
 
 onMounted(() => {

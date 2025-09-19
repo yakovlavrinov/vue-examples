@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { useUserStore } from 'src/entities/user/model/store';
+
+
+
+
 const userStore = useUserStore()
 
 </script>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+
+
 import { useUserStore } from "src/entities/user/model/store";
 import UserTableColumns from "./UserTableColumns.vue";
 import UserTableRows from "./UserTableRows.vue";
