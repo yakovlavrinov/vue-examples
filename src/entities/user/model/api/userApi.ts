@@ -22,7 +22,7 @@ export const fetchUsers = () => {
         },
         {
           id: 3,
-          fullname: "Иванов Иван Иванович",
+          fullname: "Эндрю Тейт Иванович",
           tel: "88005553535",
           email: "aaaa@mail.ru",
           address: "г Москва ул Московская",

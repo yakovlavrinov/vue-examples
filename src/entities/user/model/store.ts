@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import type { User } from "./types";
-import { fetchUsers} from "./api/userApi";
+import { fetchUsers } from "./api/userApi";
 
 export const useUserStore = defineStore("user", () => {
   const users = ref<User[]>([]);
@@ -21,9 +21,20 @@ export const useUserStore = defineStore("user", () => {
     }
   };
 
+  const searchUsers = () => {
+    if (searchQuery.value) {
+      users.value = users.value.filter((user) =>
+        user.fullname.toLowerCase().includes(searchQuery.value.toLowerCase())
+      );
+    } else {
+        loadUsers()
+    }
+  };
+
   return {
     users,
     searchQuery,
-    loadUsers
+    loadUsers,
+    searchUsers,
   };
 });
