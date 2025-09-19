@@ -7,7 +7,6 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-
 </script>
 
 <template>
@@ -20,4 +19,13 @@ const props = defineProps<Props>();
   </tbody>
 </template>
 
-<style scoped></style>
+<style scoped>
+tr td {
+  transition: background-color 0.7s ease;
+}
+
+tr:hover td {
+  background-color: rgba(29, 131, 97, 0.5);
+  cursor: pointer;
+}
+</style>
