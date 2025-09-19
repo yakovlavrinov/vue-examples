@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import type { User } from "./types";
 import { fetchUsers } from "./api/userApi";
 
@@ -27,7 +27,7 @@ export const useUserStore = defineStore("user", () => {
         user.fullname.toLowerCase().includes(searchQuery.value.toLowerCase())
       );
     } else {
-        loadUsers()
+      loadUsers();
     }
   };
 
