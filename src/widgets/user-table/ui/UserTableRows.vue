@@ -12,6 +12,7 @@ const props = defineProps<Props>();
 <template>
   <tbody>
     <tr v-for="user in props.users" :key="user.id">
+      <td><n-checkbox /></td>
       <td v-for="column in props.columns" :key="column.type">
         {{ user[column.type as keyof User] }}
       </td>
