@@ -1,3 +1,3 @@
-import UserSearch from "./ui/UserSearch.vue";
+import UserSearch from './ui/UserSearch.vue'
 
-export { UserSearch };
+export { UserSearch }

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { User, UserTableColumn } from "src/entities/user/model/types";
+import type { User, UserTableColumn } from 'src/entities/user/model/types'
 
 interface Props {
-  columns: UserTableColumn[];
-  users: User[];
+  columns: UserTableColumn[]
+  users: User[]
 }
 
-const props = defineProps<Props>();
+const props = defineProps<Props>()
 </script>
 
 <template>

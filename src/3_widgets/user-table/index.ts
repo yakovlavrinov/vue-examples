@@ -1,3 +1,3 @@
-import UserTable from "./ui/UserTable.vue";
+import UserTable from './ui/UserTable.vue'
 
-export { UserTable };
+export { UserTable }
