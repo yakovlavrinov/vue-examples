@@ -13,6 +13,7 @@ export const useUserStore = defineStore('user', () => {
     try {
       isLoading.value = true
       const res = (await fetchUsers()) as User[]
+
       if (searchQuery.value) {
         users.value = searchUsers(res)
       } else {
@@ -35,5 +36,7 @@ export const useUserStore = defineStore('user', () => {
     users,
     searchQuery,
     loadUsers,
+    isLoading,
+    error
   }
 })

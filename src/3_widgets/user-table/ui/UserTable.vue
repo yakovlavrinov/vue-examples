@@ -20,6 +20,10 @@ const columns = [
     <UserTableColumns :columns />
     <UserTableRows :columns :users="userStore.users" />
   </n-table>
+  
+  <div v-if="userStore.isLoading" class="message">Загрузка данных...</div>
+  <div v-else-if="userStore.error" class="message">Ошибка</div>
+  <div v-else-if="userStore.users.length === 0" class="message">Не найдено</div>
 </template>
 
 <style scoped></style>
