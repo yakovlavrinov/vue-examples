@@ -2,6 +2,7 @@
 import { useUserStore } from 'src/entities/user/model/store'
 import UserTableColumns from './UserTableColumns.vue'
 import UserTableRows from './UserTableRows.vue'
+import { NAlert, NEmpty, NResult, NSpin, NText } from 'naive-ui'
 
 const userStore = useUserStore()
 const columns = [
@@ -20,10 +21,10 @@ const columns = [
     <UserTableColumns :columns />
     <UserTableRows :columns :users="userStore.users" />
   </n-table>
-  
-  <div v-if="userStore.isLoading" class="message">Загрузка данных...</div>
-  <div v-else-if="userStore.error" class="message">Ошибка</div>
-  <div v-else-if="userStore.users.length === 0" class="message">Не найдено</div>
+
+  <NText type="primary" v-if="userStore.isLoading">Загрузка данных...</NText>
+  <NText type="error" v-else-if="userStore.error" class="message">Ошибка</NText>
+  <NText type="warning" v-else-if="userStore.users.length === 0" class="message">Не найдено</NText>
 </template>
 
 <style scoped></style>
