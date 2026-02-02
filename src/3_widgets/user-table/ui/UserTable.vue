@@ -27,9 +27,4 @@ const columns = [
   <NText type="warning" v-else-if="userStore.users.length === 0" class="message">Не найдено</NText>
 </template>
 
-
-
-
-
-
 <style scoped></style>
